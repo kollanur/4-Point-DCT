@@ -1,0 +1,20 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity latch_32bit is
+    Port ( EN : in  STD_LOGIC;
+           D  : in  STD_LOGIC_vector(31 downto 0);
+           Q  : out STD_LOGIC_vector(31 downto 0));
+end latch_32bit;
+
+architecture Behavioral of latch_32bit is
+begin
+
+process (EN, D)
+begin
+       if (EN = '1') then
+				Q <= D;
+		 end if;
+end process;
+
+end Behavioral;

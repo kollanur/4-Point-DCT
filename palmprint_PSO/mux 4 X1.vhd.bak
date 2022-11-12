@@ -1,0 +1,21 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity mux_4to1 is
+    Port ( SEL : in  STD_LOGIC;     -- select input
+           A   : in  STD_LOGIC;     -- inputs
+			  B   : in  STD_LOGIC;
+			  C   : in  STD_LOGIC;
+			  D   : in  STD_LOGIC;
+           X   : out STD_LOGIC);                        -- output
+end mux_4to1;
+
+architecture Behavioral of mux_4to1 is
+begin
+with SEL select
+    X <= A when "00",
+         B when "01",
+         C when "10",
+         D when "11",
+         '0'  when others;
+end Behavioral;
